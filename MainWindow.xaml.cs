@@ -59,9 +59,11 @@ namespace WpfApp1
             else
             {
                 accumulator += currOp;
-                textBox.Text = accumulator.ToString();                
+                textBox.Text = accumulator.ToString();
+                IsOver = true;
             }
             history.Text += currOp.ToString() + " + " ;
+            currSign = Sign.Plus;
         }
 
         private void BtEqual_Click(object sender, RoutedEventArgs e)
@@ -69,7 +71,15 @@ namespace WpfApp1
             IsOver = true;
             currState = State.FirstOp;
             history.Text = "";
+
+            switch(currSign)
+            {
+                case Sign.Plus: accumulator += currOp; break;
+            }
+
+
             textBox.Text = accumulator.ToString();
+
         }
     }
 }
