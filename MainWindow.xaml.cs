@@ -26,7 +26,7 @@ namespace WpfApp1
         public enum State { FirstOp, SecondOp };
         public State currState = State.FirstOp;
         
-        public enum Sign { None, Plus, Minus};
+        public enum Sign { None, Plus, Minus, Power, Devide, MC, MR, MS, MP, MM, Negate, Sqrt, Persent, Reciproc}; //backspace, clean curr, clean all
         public Sign currSign = Sign.None;
 
         public bool IsOver = true;
@@ -65,6 +65,57 @@ namespace WpfApp1
             history.Text += currOp.ToString() + " + " ;
             currSign = Sign.Plus;
         }
+        private void BtMinus_Click(object sender, RoutedEventArgs e)
+        {
+            if (currState == State.FirstOp)
+            {
+                accumulator = double.Parse(textBox.Text);
+                textBox.Text = "";
+                currState = State.SecondOp;
+            }
+            else
+            {
+                accumulator -= currOp;
+                textBox.Text = accumulator.ToString();
+                IsOver = true;
+            }
+            history.Text += currOp.ToString() + " - ";
+            currSign = Sign.Minus;
+        }
+        private void BtPower_Click(object sender, RoutedEventArgs e)
+        {
+            if (currState == State.FirstOp)
+            {
+                accumulator = double.Parse(textBox.Text);
+                textBox.Text = "";
+                currState = State.SecondOp;
+            }
+            else
+            {
+                accumulator *= currOp;
+                textBox.Text = accumulator.ToString();
+                IsOver = true;
+            }
+            history.Text += currOp.ToString() + " * ";
+            currSign = Sign.Power;
+        }
+        private void BtDevide_Click(object sender, RoutedEventArgs e)
+        {
+            if (currState == State.FirstOp)
+            {
+                accumulator = double.Parse(textBox.Text);
+                textBox.Text = "";
+                currState = State.SecondOp;
+            }
+            else
+            {
+                accumulator /= currOp;
+                textBox.Text = accumulator.ToString();
+                IsOver = true;
+            }
+            history.Text += currOp.ToString() + " / ";
+            currSign = Sign.Devide;
+        }
 
         private void BtEqual_Click(object sender, RoutedEventArgs e)
         {
@@ -75,10 +126,22 @@ namespace WpfApp1
             switch(currSign)
             {
                 case Sign.Plus: accumulator += currOp; break;
+                case Sign.Minus: accumulator -= currOp; break;
+                case Sign.Devide: accumulator /= currOp; break;
+                case Sign.Power: accumulator *= currOp; break;
             }
-
-
+            currOp = accumulator;
             textBox.Text = accumulator.ToString();
+
+        }
+
+        private void BtDot_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtReciproc_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
