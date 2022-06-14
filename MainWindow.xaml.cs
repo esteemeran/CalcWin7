@@ -32,6 +32,7 @@ namespace WpfApp1
         public enum TextState { Clear, Res, Enter};
         public TextState IsOver = TextState.Clear;
 
+        public char DotCh = ",";
         public MainWindow()
         {
             InitializeComponent();
@@ -71,15 +72,60 @@ namespace WpfApp1
         }
         private void BtMinus_Click(object sender, RoutedEventArgs e)
         {
-
+            currOp = double.Parse(textBox.Text);
+            if (currState == State.FirstOp)
+            {
+                accumulator = currOp;
+                textBox.Text = accumulator.ToString();
+                currState = State.SecondOp;
+                IsOver = TextState.Res;
+            }
+            else
+            {
+                accumulator -= currOp;
+                textBox.Text = accumulator.ToString();
+                IsOver = TextState.Clear;
+            }
+            history.Text += currOp + " - ";
+            currSign = Sign.Minus;
         }
         private void BtPower_Click(object sender, RoutedEventArgs e)
         {
-
+            currOp = double.Parse(textBox.Text);
+            if (currState == State.FirstOp)
+            {
+                accumulator = currOp;
+                textBox.Text = accumulator.ToString();
+                currState = State.SecondOp;
+                IsOver = TextState.Res;
+            }
+            else
+            {
+                accumulator *= currOp;
+                textBox.Text = accumulator.ToString();
+                IsOver = TextState.Clear;
+            }
+            history.Text += currOp + " * ";
+            currSign = Sign.Power;
         }
         private void BtDevide_Click(object sender, RoutedEventArgs e)
         {
-
+            currOp = double.Parse(textBox.Text);
+            if (currState == State.FirstOp)
+            {
+                accumulator = currOp;
+                textBox.Text = accumulator.ToString();
+                currState = State.SecondOp;
+                IsOver = TextState.Res;
+            }
+            else
+            {
+                accumulator /= currOp;
+                textBox.Text = accumulator.ToString();
+                IsOver = TextState.Clear;
+            }
+            history.Text += currOp + " / ";
+            currSign = Sign.Devide;
         }
 
         private void BtEqual_Click(object sender, RoutedEventArgs e)
@@ -111,6 +157,43 @@ namespace WpfApp1
         private void BtReciproc_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void BtPersent_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtSqrt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtNegate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtBackspace_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBox.Text.Length == 1) textBox.Text = "0";
+            else textBox.Text = textBox.Text.Remove(textBox.Text.Length);
+        }
+
+        private void BtCleanCurr_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Text = "0";
+        }
+
+        private void BtCleanAll_Click(object sender, RoutedEventArgs e)
+        {
+            accumulator = 0;
+            currState = State.FirstOp;
+            currSign = Sign.None;
+            IsOver = TextState.Clear;
+
+            textBox.Text = accumulator.ToString();
+            history.Text = "";
         }
     }
 }
