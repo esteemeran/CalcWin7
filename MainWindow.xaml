@@ -18,32 +18,33 @@
             <Button x:Name="btNum7" Content="7" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="btNum_Click"/>
             <Button x:Name="btNum8" Content="8" HorizontalAlignment="Left" Margin="44,72,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="btNum_Click" RenderTransformOrigin="0.441,0.614"/>
             <Button x:Name="btNum9" Content="9" HorizontalAlignment="Left" Margin="77,72,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="btNum_Click"/>
-            
-            <Button x:Name="btDot" Content="." HorizontalAlignment="Left" Margin="77,166,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtDot_Click" IsEnabled="False"/>
+
+            <Button x:Name="btDot" Content="." HorizontalAlignment="Left" Margin="77,166,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtDot_Click"/>
             <Button x:Name="btEqual" Content="=" HorizontalAlignment="Left" Margin="143,134,0,0" VerticalAlignment="Top" Width="28" Height="58" Click="BtEqual_Click"/>
-            
+
             <Button x:Name="btPlus" Content="+" HorizontalAlignment="Left" Margin="110,166,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtPlus_Click"/>
             <Button x:Name="btMinus" Content="-" HorizontalAlignment="Left" Margin="110,134,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtMinus_Click"/>
             <Button x:Name="btPower" Content="*" HorizontalAlignment="Left" Margin="110,103,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtPower_Click"/>
             <Button x:Name="btDevide" Content="/" HorizontalAlignment="Left" Margin="110,72,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtDevide_Click"/>
-            
-            <Button x:Name="btReciproc" Content="1/x" HorizontalAlignment="Left" Margin="143,103,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtReciproc_Click" IsEnabled="False"/>
+
+            <Button x:Name="btReciproc" Content="1/x" HorizontalAlignment="Left" Margin="143,103,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtReciproc_Click"/>
             <Button x:Name="btPersent" Content="%" HorizontalAlignment="Left" Margin="143,72,0,0" VerticalAlignment="Top" Width="28" Height="26" IsDefault="True" Click="BtPersent_Click" IsEnabled="False"/>
-            <Button x:Name="btNegate" Content="+/-" HorizontalAlignment="Left" Margin="110,41,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtNegate_Click" IsEnabled="False" />
-            <Button x:Name="btSqrt" Content="sqrt" HorizontalAlignment="Left" Margin="143,41,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtSqrt_Click" IsEnabled="False" />
-            
-            <Button x:Name="btMR" Content="MR" HorizontalAlignment="Left" Margin="44,10,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtDevide_Click" IsEnabled="False"/>
-            <Button x:Name="btMS" Content="MS" HorizontalAlignment="Left" Margin="77,10,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtDevide_Click" IsEnabled="False"/>
-            <Button x:Name="btMPlus" Content="M+" HorizontalAlignment="Left" Margin="110,10,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtDevide_Click" IsEnabled="False"/>
-            <Button x:Name="btMMinus" Content="M-" HorizontalAlignment="Left" Margin="143,10,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtDevide_Click" IsEnabled="False"/>
-            <Button x:Name="btMClean" Content="MC" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtDevide_Click" IsEnabled="False"/>
+            <Button x:Name="btNegate" Content="+/-" HorizontalAlignment="Left" Margin="110,41,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtNegate_Click" />
+            <Button x:Name="btSqrt" Content="sqrt" HorizontalAlignment="Left" Margin="143,41,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtSqrt_Click" />
+
+            <Button x:Name="btMR" Content="MR" HorizontalAlignment="Left" Margin="44,10,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtMR_Click"/>
+            <Button x:Name="btMS" Content="MS" HorizontalAlignment="Left" Margin="77,10,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtMS_Click"/>
+            <Button x:Name="btMPlus" Content="M+" HorizontalAlignment="Left" Margin="110,10,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtMPlus_Click"/>
+            <Button x:Name="btMMinus" Content="M-" HorizontalAlignment="Left" Margin="143,10,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtMMinus_Click"/>
+            <Button x:Name="btMClean" Content="MC" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtMClean_Click"/>
 
             <Button x:Name="btBackspace" Content="&#8592;" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="28" Height="26" FontSize="16" Click="BtBackspace_Click"/>
             <Button x:Name="btCleanCurr" Content="CE" HorizontalAlignment="Left" Margin="44,41,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtCleanCurr_Click"/>
             <Button x:Name="btCleanAll" Content="C" HorizontalAlignment="Left" Margin="77,41,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtCleanAll_Click" RenderTransformOrigin="-0.691,-0.67"/>
-            
+
         </Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="10,35,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="182"/>
-        <TextBlock x:Name="history" HorizontalAlignment="Left" Margin="10,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="10,35,0,0" Text="0" VerticalAlignment="Top" Width="182" KeyDown="TextBox_KeyDown" MaxLines="1"/>
+        <TextBlock x:Name="history" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" Width="172" TextTrimming="CharacterEllipsis"/>
+        <TextBlock x:Name="MemoryFlag" HorizontalAlignment="Left" Height="16" Margin="182,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="10" Foreground="#FF152AB2" FontWeight="Bold"/>
     </Grid>
 </Window>
