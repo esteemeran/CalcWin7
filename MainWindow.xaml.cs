@@ -125,21 +125,29 @@ namespace WpfApp1
         private void BtDevide_Click(object sender, RoutedEventArgs e)
         {
             currOp = getValue();
-            if (currState == State.FirstOp)
+            if (currOp == 0)
             {
-                accumulator = currOp;
-                setValue(accumulator);
-                currState = State.SecondOp;
-                IsOver = TextState.Res;
+                IsOver = TextState.Clear;
+                textBox.Text = "Impossible";
             }
             else
             {
-                accumulator /= currOp;
-                setValue(accumulator);
-                IsOver = TextState.Clear;
+                if (currState == State.FirstOp)
+                {
+                    accumulator = currOp;
+                    setValue(accumulator);
+                    currState = State.SecondOp;
+                    IsOver = TextState.Res;
+                }
+                else
+                {
+                    accumulator /= currOp;
+                    setValue(accumulator);
+                    IsOver = TextState.Clear;
+                }
+                history.Text += currOp + " / ";
+                currSign = Sign.Devide;
             }
-            history.Text += currOp + " / ";
-            currSign = Sign.Devide;
         }
         
         private void BtEqual_Click(object sender, RoutedEventArgs e)
@@ -166,14 +174,22 @@ namespace WpfApp1
         private void BtReciproc_Click(object sender, RoutedEventArgs e)
         {
             double t = getValue();
-            setValue(1/t);
-            history.Text += "reciproc(" + t + ")";           
+            if(t == 0)
+            {
+                IsOver = TextState.Clear;
+                textBox.Text = "Impossible";
+            }
+            else
+            {
+                setValue(1 / t);
+                history.Text += "reciproc(" + t + ")";
+            }
         }
 
         private void BtPersent_Click(object sender, RoutedEventArgs e)
         {
-         
-
+            currOp = getValue();
+            setValue(accumulator * currOp / 100);
         }
 
         private void BtSqrt_Click(object sender, RoutedEventArgs e)
@@ -267,5 +283,6 @@ namespace WpfApp1
         {
             memory -= getValue();
         }
+
     }
 }

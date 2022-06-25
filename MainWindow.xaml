@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="298.41" Width="210.54">
     <Grid Margin="0,0,0,0">
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Вид">
+                <MenuItem Header="Обычный" IsChecked="True"/>
+            </MenuItem>
+            <MenuItem Header="Правка" >
+            </MenuItem>
+            <MenuItem Header="Справка" >
+                
+            </MenuItem>
+        </Menu>
         <Grid x:Name="btGrid" HorizontalAlignment="Left" Height="203" Margin="10,63,0,0" VerticalAlignment="Top" Width="182">
             <Button x:Name="btNum0" Content="0" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" Width="62" Height="26" Click="btNum_Click"/>
             <Button x:Name="btNum1" Content="1" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="btNum_Click"/>
@@ -28,7 +38,7 @@
             <Button x:Name="btDevide" Content="/" HorizontalAlignment="Left" Margin="110,72,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtDevide_Click"/>
 
             <Button x:Name="btReciproc" Content="1/x" HorizontalAlignment="Left" Margin="143,103,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtReciproc_Click"/>
-            <Button x:Name="btPersent" Content="%" HorizontalAlignment="Left" Margin="143,72,0,0" VerticalAlignment="Top" Width="28" Height="26" IsDefault="True" Click="BtPersent_Click" IsEnabled="False"/>
+            <Button x:Name="btPersent" Content="%" HorizontalAlignment="Left" Margin="143,72,0,0" VerticalAlignment="Top" Width="28" Height="26" IsDefault="True" Click="BtPersent_Click"/>
             <Button x:Name="btNegate" Content="+/-" HorizontalAlignment="Left" Margin="110,41,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtNegate_Click" />
             <Button x:Name="btSqrt" Content="sqrt" HorizontalAlignment="Left" Margin="143,41,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtSqrt_Click" />
 
@@ -43,8 +53,8 @@
             <Button x:Name="btCleanAll" Content="C" HorizontalAlignment="Left" Margin="77,41,0,0" VerticalAlignment="Top" Width="28" Height="26" Click="BtCleanAll_Click" RenderTransformOrigin="-0.691,-0.67"/>
 
         </Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="10,35,0,0" Text="0" VerticalAlignment="Top" Width="182" KeyDown="TextBox_KeyDown" MaxLines="1"/>
-        <TextBlock x:Name="history" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" Width="172" TextTrimming="CharacterEllipsis"/>
-        <TextBlock x:Name="MemoryFlag" HorizontalAlignment="Left" Height="16" Margin="182,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="10" Foreground="#FF152AB2" FontWeight="Bold"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="10,40,0,0" Text="0" VerticalAlignment="Top" Width="182" KeyDown="TextBox_KeyDown" MaxLines="1"/>
+        <TextBlock x:Name="history" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" Width="172" TextTrimming="CharacterEllipsis"/>
+        <TextBlock x:Name="MemoryFlag" HorizontalAlignment="Left" Height="16" Margin="182,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="10" Foreground="#FF152AB2" FontWeight="Bold"/>
     </Grid>
 </Window>
